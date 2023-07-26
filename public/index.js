@@ -1,36 +1,53 @@
-// -------------- 트윗 작성 영역 확장 --------------
+let twitButtonEnabled = false;
+
+// -------------- 트윗 작성 영역 컨트롤 시작 --------------
 document.addEventListener("keyup", () => {
   const makeTwit = document.querySelector(".middle-make-twit");
   const textArea = document.querySelector("textarea");
+  const twitText = document.querySelector("textarea");
+  const makeTwitButton = document.querySelector(".twit-button");
 
   textArea.style.height = "0px";
   makeTwit.style.height = Number(91 + textArea.scrollHeight) + "px";
   textArea.style.height = Number(19 + textArea.scrollHeight) + "px";
+  if (twitText.value) {
+    makeTwitButton.style.opacity = "1";
+    makeTwitButton.style.cursor = "pointer";
+    twitButtonEnabled = true;
+  } else {
+    makeTwitButton.style.opacity = "0.5";
+    makeTwitButton.style.cursor = "default";
+    twitButtonEnabled = false;
+  }
 });
-// ---------------------------------------------
+// -------------- 트윗 작성 영역 컨트롤 끝 --------------
 
 // localStorage.clear();
-// -------------- 트윗 작성 --------------
+// -------------- 트윗 작성 시작 --------------
 let twitNum = localStorage.getItem("twitNum")
   ? localStorage.getItem("twitNum")
   : 0;
+const twitText = document.querySelector("textarea");
 const makeTwitButton = document.querySelector(".twit-button");
 makeTwitButton.onclick = () => {
-  let makeTwit = {
-    userName: "강수빈 ",
-    userId: `@rkdtnqls ·`,
-    createdAt: Date.now(),
-    twitValue: document.querySelector("textarea").value,
-    heart: 0,
-  };
-  localStorage.setItem(`twit${twitNum}`, JSON.stringify(makeTwit));
-  localStorage.setItem("twitNum", ++twitNum);
+  if (twitButtonEnabled) {
+    let makeTwit = {
+      userName: "강수빈 ",
+      userId: `@rkdtnqls ·`,
+      createdAt: Date.now(),
+      twitValue: twitText.value,
+      heart: 0,
+    };
 
-  location.reload();
+    localStorage.setItem(`twit${twitNum}`, JSON.stringify(makeTwit));
+    localStorage.setItem("twitNum", ++twitNum);
+
+    location.reload();
+  }
 };
-// -------------------------------------
+// -------------- 트윗 작성 끝 --------------
 
-// -------------- 트윗 출력 --------------
+// -------------- 트윗 출력 시작 --------------
 const twitList = document.querySelector(".middle-twitlist");
 for (let i = twitNum; i > 0; i--) {
   const getTwit = JSON.parse(localStorage.getItem(`twit${i - 1}`));
@@ -53,7 +70,7 @@ for (let i = twitNum; i > 0; i--) {
   text.rows = "1";
   text.classList.add("text");
   contentArea.appendChild(text);
-  text.innerText = getTwit["twitValue"];
+  text.innerHTML = getTwit["twitValue"];
   const buttons = document.createElement("div");
   buttons.classList.add("buttons");
   contentArea.appendChild(buttons);
@@ -119,4 +136,4 @@ for (let i = twitNum; i > 0; i--) {
   buttons.appendChild(share);
   share.innerText = "X";
 }
-// -------------------------------------
+// -------------- 트윗 출력 끝 --------------
