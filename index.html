@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter</title>
+    <link rel="stylesheet" href="public/index.css" />
+  </head>
+  <body>
+    <div class="twitter-wrapper">
+      <div class="left-wrapper"></div>
+      <div class="middle-wrapper">
+        <div class="middle middle-header">홈</div>
+        <div class="middle middle-header-button">
+          <div class="middle-button">
+            <div class="left-text focused-text">
+              추천
+              <div class="focus-button"></div>
+            </div>
+          </div>
+          <div class="middle-button">
+            <div class="right-text">
+              <!--focused-text">-->
+              팔로우 중
+              <!-- <div class="focus-button"></div> -->
+            </div>
+          </div>
+        </div>
+        <div class="middle middle-make-twit">
+          <div class="profile-image"></div>
+          <div class="content-area">
+            <div class="text-area">
+              <textarea
+                name="twit-text"
+                id="twit-text"
+                cols="40"
+                rows="2"
+                placeholder="무슨 일이 일어나고 있나요?"
+              ></textarea>
+            </div>
+            <div class="button-area">
+              <div class="twit-button">트윗하기</div>
+            </div>
+          </div>
+        </div>
+        <div class="middle-twitlist">
+          <div class="middle middle-twit">
+            <div class="profile-image"></div>
+            <div class="content-area">
+              <div class="name">
+                <div class="profile">
+                  <div class="user-name">강수빈</div>
+                  <div class="user-id">&nbsp;@rkdtnqls</div>
+                  <div class="created-at">&nbsp;· 2시간</div>
+                </div>
+                <div class="options">...</div>
+              </div>
+              <textarea class="text" cols="30" rows="1">
+저희 회사에서 최근 임직원을 대상으로 발행한 기업 아이덴티티 NFT "DYM"
+즐겁고 건강한 조직문화를 만들어 가는데에 도움이 될 수 있는 HR 관련 정책들을 고도화해 가고 있습니다.
+멤버가 사용기를 너무 잘 정리해줬네요. ㅎ
+
+이토록 귀여운데 유용하기까지 한 DYM 사용기
+              </textarea>
+              <div class="button">
+                <div class="comment">X</div>
+                <div class="retwit">X</div>
+                <div class="heart">♡</div>
+                <div class="views">X</div>
+                <div class="share">X</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-wrapper"></div>
+    </div>
+    <script src="public/index.js"></script>
+  </body>
+</html>
