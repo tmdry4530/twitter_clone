@@ -1,0 +1,230 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  box-sizing: border-box;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: purple;
+  margin: 12px 12px;
+  cursor: pointer;
+}
+
+.middle {
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.3);
+}
+
+.middle-wrapper {
+  max-width: 600px;
+  height: 1000vh;
+  border-left: 0.5px solid rgba(128, 128, 128, 0.3);
+  border-right: 0.5px solid rgba(128, 128, 128, 0.3);
+}
+
+/* middle-header */
+.middle-wrapper .middle-header {
+  height: 24px;
+  border-bottom: 0;
+  padding: 16px;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* middle-header-button */
+.middle-wrapper .middle-header-button {
+  height: 56px;
+  border-top: 0;
+  display: flex;
+  align-items: center;
+  color: gray;
+}
+.middle-header-button .middle-button {
+  height: 52px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  cursor: pointer;
+}
+
+.middle-header-button .middle-button:hover {
+  background-color: rgba(20, 20, 20, 1);
+}
+
+.middle-header-button .middle-button .focused-text {
+  height: 100%;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.middle-header-button .middle-button .focused-text .focus-button {
+  width: 52px;
+  height: 4px;
+  background-color: rgb(29, 155, 240);
+  border-radius: 8px;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+/* middle-make-twit */
+.middle-wrapper .middle-make-twit {
+  min-height: 120px;
+  padding: 0 8px;
+  display: flex;
+}
+.middle-make-twit .content-area {
+  padding-top: 4px;
+}
+.middle-make-twit .text-area textarea::-webkit-scrollbar {
+  display: none;
+}
+textarea {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border: none;
+  resize: none;
+  outline: none;
+  padding: 14px 0;
+  margin: 4px;
+  word-spacing: -8px;
+}
+
+.middle-make-twit .button-area {
+  display: flex;
+  justify-content: right;
+  padding-bottom: 8px;
+}
+.middle-make-twit .button-area .twit-button {
+  width: 84px;
+  height: 34px;
+  background-color: rgb(29, 155, 240);
+  border-radius: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* .middle-wrapper .middle-make-twit:focus {
+  min-height: 240px;
+} */
+
+/* middle-twitlist */
+.middle-wrapper .middle-twitlist {
+}
+
+.middle-twitlist .middle-twit {
+  min-height: 80px;
+  padding: 0 8px;
+  display: flex;
+}
+.middle-twitlist .middle-twit .content-area {
+  margin: 12px 0;
+}
+
+.middle-twitlist .middle-twit .content-area .name {
+  display: flex;
+  justify-content: space-between;
+}
+.middle-twitlist .middle-twit .content-area .name .profile {
+  display: flex;
+}
+.middle-twitlist .middle-twit .content-area .name .profile .user-name {
+  height: 20px;
+}
+.middle-twitlist .middle-twit .content-area .name .profile .user-id {
+  color: gray;
+}
+.middle-twitlist .middle-twit .content-area .name .profile .created-at {
+  color: gray;
+}
+.middle-twitlist .middle-twit .content-area .name .options {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  cursor: pointer;
+}
+.middle-twitlist .middle-twit .content-area .name .options:hover {
+  color: rgb(29, 155, 240);
+  background-color: rgba(29, 155, 240, 0.2);
+  border-radius: 50%;
+}
+
+.middle-twitlist .middle-twit .content-area .text {
+  width: 514px;
+  font-size: 16px;
+  overflow: auto;
+  padding: 0 0 14px 0;
+  margin: 0;
+}
+
+.middle-twitlist .middle-twit .content-area .button {
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+  font-size: 18px;
+}
+
+.middle-twitlist .middle-twit .content-area .button .comment {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.middle-twitlist .middle-twit .content-area .button .retwit {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.middle-twitlist .middle-twit .content-area .button .heart {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.middle-twitlist .middle-twit .content-area .button .heart:hover {
+  color: magenta;
+  background-color: rgba(255, 0, 255, 0.2);
+  border-radius: 50%;
+}
+.middle-twitlist .middle-twit .content-area .button .views {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.middle-twitlist .middle-twit .content-area .button .share {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
