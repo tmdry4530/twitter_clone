@@ -75,8 +75,8 @@ for (let i = twitNum; i > 0; i--) {
   buttons.classList.add("buttons");
   contentArea.appendChild(buttons);
 
-  text.style.height = Number(-25 + text.scrollHeight) + "px";
-  printTwit.style.height = Number(70 + text.scrollHeight) + "px";
+  text.style.height = Number(-15 + text.scrollHeight) + "px";
+  printTwit.style.height = Number(80 + text.scrollHeight) + "px";
 
   const profile = document.createElement("div");
   profile.classList.add("profile");

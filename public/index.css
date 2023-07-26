@@ -95,6 +95,7 @@ textarea {
   display: flex;
 }
 .middle-make-twit .content-area {
+  width: 500px;
 }
 .middle-make-twit .text-area {
   padding-top: 16px;
@@ -122,6 +123,7 @@ textarea {
 
 /* middle-twitlist */
 .middle-wrapper .middle-twitlist {
+  width: 100%;
 }
 
 .middle-twitlist .middle-twit {
