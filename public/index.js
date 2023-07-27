@@ -15,13 +15,12 @@ let currentUserId = localStorage.getItem("currentUserId")
 // -------------- 트윗 작성 영역 컨트롤 시작 --------------
 document.addEventListener("keyup", () => {
   const makeTwit = document.querySelector(".middle-make-twit");
-  const textArea = document.querySelector("textarea");
   const twitText = document.querySelector("#twit-text");
   const makeTwitButton = document.querySelector(".twit-button");
 
-  textArea.style.height = "0px";
-  makeTwit.style.height = Number(91 + textArea.scrollHeight) + "px";
-  textArea.style.height = Number(19 + textArea.scrollHeight) + "px";
+  twitText.style.height = "0px";
+  makeTwit.style.height = Number(91 + twitText.scrollHeight) + "px";
+  twitText.style.height = Number(19 + twitText.scrollHeight) + "px";
   if (twitText.value) {
     makeTwitButton.style.opacity = "1";
     makeTwitButton.style.cursor = "pointer";
@@ -36,7 +35,7 @@ document.addEventListener("keyup", () => {
 
 // localStorage.clear();
 // -------------- 트윗 작성 시작 --------------
-const twitText = document.querySelector("textarea");
+const twitText = document.querySelector("#twit-text");
 const makeTwitButton = document.querySelector(".twit-button");
 makeTwitButton.onclick = () => {
   if (twitButtonEnabled) {
