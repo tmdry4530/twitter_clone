@@ -11,6 +11,7 @@ let currentUserId = localStorage.getItem("currentUserId")
   : "@rkdtnqls";
 // -------------- 데이터 변수 설정 끝 --------------
 
+// localStorage.clear();
 // -------------- 트윗 작성 영역 컨트롤 시작 --------------
 document.addEventListener("keyup", () => {
   const makeTwit = document.querySelector(".middle-make-twit");
@@ -48,7 +49,7 @@ makeTwitButton.onclick = () => {
 
     let makeTwit = {
       userName: currentUser,
-      userId: `${currentUserId} ·`,
+      userId: currentUserId,
       createdAt: Date.now(),
       twitValue: twitText.value,
       heart: 0,
@@ -108,7 +109,7 @@ for (let i = twitNum; i > 0; i--) {
   const userId = document.createElement("div");
   userId.classList.add("user-id");
   profile.appendChild(userId);
-  userId.innerText = getTwit["userId"];
+  userId.innerText = getTwit["userId"] + " ·";
   const createdAt = document.createElement("div");
   createdAt.classList.add("created-at");
   profile.appendChild(createdAt);
