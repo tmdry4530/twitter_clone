@@ -14,6 +14,7 @@ let currentUserIntroduce = localStorage.getItem("currentUserIntroduce")
 // -------------- 데이터 변수 설정 끝 --------------
 
 // -------------- 프로필 설정 시작 --------------
+const shortInfoName = document.querySelector("#short-info-name");
 const profileName = document.querySelector("#profile-name");
 const profileId = document.querySelector("#profile-id");
 const profileIntroduce = document.querySelector("#profile-introduce");
@@ -62,6 +63,7 @@ modalSaveButton.onclick = () => {
     ? localStorage.getItem("currentUserIntroduce")
     : "";
 
+  shortInfoName.innerText = currentUser;
   profileName.innerText = currentUser;
   profileId.innerText = currentUserId;
   profileIntroduce.innerText = currentUserIntroduce;
@@ -69,6 +71,7 @@ modalSaveButton.onclick = () => {
   editModal.style.display = "none";
 };
 
+shortInfoName.innerText = currentUser;
 profileName.innerText = currentUser;
 profileId.innerText = currentUserId;
 profileIntroduce.innerText = currentUserIntroduce;
