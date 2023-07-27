@@ -1,10 +1,21 @@
+// -------------- 데이터 변수 설정 시작 --------------
 let twitButtonEnabled = false;
+let twitNum = localStorage.getItem("twitNum")
+  ? localStorage.getItem("twitNum")
+  : 0;
+let currentUser = localStorage.getItem("currentUser")
+  ? localStorage.getItem("currentUser")
+  : "강수빈";
+let currentUserId = localStorage.getItem("currentUserId")
+  ? localStorage.getItem("currentUserId")
+  : "@rkdtnqls";
+// -------------- 데이터 변수 설정 끝 --------------
 
 // -------------- 트윗 작성 영역 컨트롤 시작 --------------
 document.addEventListener("keyup", () => {
   const makeTwit = document.querySelector(".middle-make-twit");
   const textArea = document.querySelector("textarea");
-  const twitText = document.querySelector("textarea");
+  const twitText = document.querySelector("#twit-text");
   const makeTwitButton = document.querySelector(".twit-button");
 
   textArea.style.height = "0px";
@@ -24,16 +35,20 @@ document.addEventListener("keyup", () => {
 
 // localStorage.clear();
 // -------------- 트윗 작성 시작 --------------
-let twitNum = localStorage.getItem("twitNum")
-  ? localStorage.getItem("twitNum")
-  : 0;
 const twitText = document.querySelector("textarea");
 const makeTwitButton = document.querySelector(".twit-button");
 makeTwitButton.onclick = () => {
   if (twitButtonEnabled) {
+    currentUser = localStorage.getItem("currentUser")
+      ? localStorage.getItem("currentUser")
+      : "강수빈";
+    currentUserId = localStorage.getItem("currentUserId")
+      ? localStorage.getItem("currentUserId")
+      : "@rkdtnqls";
+
     let makeTwit = {
-      userName: "강수빈 ",
-      userId: `@rkdtnqls ·`,
+      userName: currentUser,
+      userId: `${currentUserId} ·`,
       createdAt: Date.now(),
       twitValue: twitText.value,
       heart: 0,
@@ -84,7 +99,7 @@ for (let i = twitNum; i > 0; i--) {
   const options = document.createElement("div");
   options.classList.add("options");
   info.appendChild(options);
-  options.innerText = "X";
+  options.innerText = "...";
 
   const userName = document.createElement("div");
   userName.classList.add("user-name");
@@ -114,12 +129,12 @@ for (let i = twitNum; i > 0; i--) {
   comment.classList.add("button");
   comment.classList.add("comment");
   buttons.appendChild(comment);
-  comment.innerText = "X";
+  comment.innerText = "⎚";
   const retwit = document.createElement("div");
   retwit.classList.add("button");
   retwit.classList.add("retwit");
   buttons.appendChild(retwit);
-  retwit.innerText = "X";
+  retwit.innerText = "♺";
   const heart = document.createElement("div");
   heart.classList.add("button");
   heart.classList.add("heart");
@@ -129,11 +144,11 @@ for (let i = twitNum; i > 0; i--) {
   views.classList.add("button");
   views.classList.add("views");
   buttons.appendChild(views);
-  views.innerText = "X";
+  views.innerText = "⫻";
   const share = document.createElement("div");
   share.classList.add("button");
   share.classList.add("share");
   buttons.appendChild(share);
-  share.innerText = "X";
+  share.innerText = "⎙";
 }
 // -------------- 트윗 출력 끝 --------------

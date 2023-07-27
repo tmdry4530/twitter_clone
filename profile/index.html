@@ -3,10 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Twitter Profile</title>
+    <title>Twitter</title>
     <link rel="stylesheet" href="public/index.css" />
   </head>
   <body>
+    <div class="twitter-wrapper">
+      <div class="edit-modal">
+        <div class="modal-background">
+          <div class="modal-wrapper">
+            <div class="appbar">
+              <div class="texts">
+                <div class="close">X</div>
+                <div class="title">프로필 수정</div>
+              </div>
+              <div class="save-button">저장</div>
+            </div>
+            <div class="content">
+              <div class="header-image"></div>
+              <div class="profile-image-wrapper">
+                <div class="profile-image"></div>
+              </div>
+              <input
+                type="text"
+                id="modal-name"
+                class="name"
+                placeholder="이름"
+              />
+              <input
+                type="text"
+                id="modal-id"
+                class="id"
+                placeholder="아이디"
+              />
+              <textarea
+                name="introduce"
+                id="modal-introduce"
+                cols="30"
+                rows="7"
+                placeholder="자기소개"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="left-wrapper"></div>
+      <div class="middle-wrapper">
+        <div class="middle middle-header">
+          <div class="back">←</div>
+          <div class="short-info">
+            <div class="name">강수빈</div>
+            <div class="twits">0 트윗</div>
+          </div>
+        </div>
+        <div class="middle profile-wrapper">
+          <div class="header-image"></div>
+          <div class="profile-image"></div>
+          <div class="info">
+            <div class="edit">
+              <div class="edit-button">프로필 수정</div>
+            </div>
+            <div id="profile-name" class="name"></div>
+            <div id="profile-id" class="id"></div>
+            <div id="profile-introduce" class="introduce"></div>
+            <div class="register-day">⏲ 가입일: 2023년 7월</div>
+            <div class="social">
+              <div class="follow">
+                <div class="number">0</div>
+                <div class="text">팔로우 중</div>
+              </div>
+              <div class="follower">
+                <div class="number">0</div>
+                <div class="text">팔로워</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="middle middle-header-button">
+          <div class="middle-button">
+            <div class="button-title focused-text">
+              트윗
+              <div class="focus-button"></div>
+            </div>
+          </div>
+          <div class="middle-button">
+            <div class="button-title">
+              <!--focused-text">-->
+              답글
+              <!-- <div class="focus-button"></div> -->
+            </div>
+          </div>
+          <div class="middle-button">
+            <div class="button-title">
+              <!--focused-text">-->
+              하이라이트
+              <!-- <div class="focus-button"></div> -->
+            </div>
+          </div>
+          <div class="middle-button">
+            <div class="button-title">
+              <!--focused-text">-->
+              미디어
+              <!-- <div class="focus-button"></div> -->
+            </div>
+          </div>
+          <div class="middle-button">
+            <div class="button-title">
+              <!--focused-text">-->
+              마음에 들어요
+              <!-- <div class="focus-button"></div> -->
+            </div>
+          </div>
+        </div>
+        <div class="middle-twitlist"></div>
+      </div>
+      <div class="right-wrapper"></div>
+    </div>
     <script src="public/index.js"></script>
   </body>
 </html>
